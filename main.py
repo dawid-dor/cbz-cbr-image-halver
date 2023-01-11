@@ -128,4 +128,5 @@ def manga_page_halfer():
         shutil.rmtree(volume)
 
 
-manga_page_halfer()
+if __name__ == "__main__":
+    manga_page_halfer()
