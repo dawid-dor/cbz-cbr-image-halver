@@ -12,3 +12,8 @@ Useful if scans that you are currently reading are made by scanning the whole co
 
 Output folder will be created after the operation.
 You can safely delete it after you move/copy your files to different location - the script will create it automatically each time it runs.
+
+## Note:
+
+Depending on you system or system language, you might need to change global variable _FOLDER_SEPARATOR_ from its default value (**"\\"**) to the more common one (**"/"**).
+It was tested on polish version of Windows 10 (and that is the default settings currently set up).
