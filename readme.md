@@ -1,4 +1,4 @@
-# CBZ Image Halver
+# CBZ/CBR Image Halver
 
 ## About:
 
@@ -9,3 +9,6 @@ Useful if scans that you are currently reading are made by scanning the whole co
 
 - Put \*.cbz files (with images) into **./data** folder
 - After script completes its run, it will store its output in **./output** folder
+
+Output folder will be created after the operation.
+You can safely delete it after you move/copy your files to different location - the script will create it automatically each time it runs.
