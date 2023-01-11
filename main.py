@@ -2,6 +2,7 @@ import glob, os, zipfile, pathlib, shutil
 from tqdm import tqdm
 import cv2
 
+READING_LEFT_TO_RIGHT = False
 INPUT_FOLDER_NAME = "data"
 UNPACK_FOLDER_NAME = "unpack"
 OUTPUT_FOLDER_NAME = "output"
@@ -53,12 +54,19 @@ def cut_image_in_half(image_path, image_folder_name):
 
     # Save each half
     save_path = f"./{OUTPUT_FOLDER_NAME}/{image_folder_name}/{image_folder_name}"
-    cv2.imwrite(f"{save_path}_{PAGE_NUMBER}.jpg", s1)
-    PAGE_NUMBER += 1
-    cv2.imwrite(f"{save_path}_{PAGE_NUMBER}/.jpg", s2)
+    if not READING_LEFT_TO_RIGHT:
+        cv2.imwrite(f"{save_path}_{PAGE_NUMBER}.jpg", s2)
+        PAGE_NUMBER += 1
+        cv2.imwrite(f"{save_path}_{PAGE_NUMBER}.jpg", s1)
+        PAGE_NUMBER += 1
+    else:
+        cv2.imwrite(f"{save_path}_{PAGE_NUMBER}.jpg", s1)
+        PAGE_NUMBER += 1
+        cv2.imwrite(f"{save_path}_{PAGE_NUMBER}.jpg", s2)
+        PAGE_NUMBER += 1
 
 
-def manga_page_halfer():
+def page_halver():
     # Clear the output to avoid os errors
     clear_output_folder()
 
@@ -129,4 +137,4 @@ def manga_page_halfer():
 
 
 if __name__ == "__main__":
-    manga_page_halfer()
+    page_halver()

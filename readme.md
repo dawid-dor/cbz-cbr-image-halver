@@ -10,10 +10,9 @@ Useful if scans that you are currently reading are made by scanning the whole co
 - Put \*.cbz (or \*.cbr) files (with images) into **./data** folder
 - After script completes its run, it will store its output in **./output** folder
 
-Output folder will be created after the operation.
-You can safely delete it after you move/copy your files to different location - the script will create it automatically each time it runs.
-
 ## Note:
 
-Depending on you system or system language, you might need to change global variable _FOLDER_SEPARATOR_ from its default value (**"\\"**) to the more common one (**"/"**).
-It was tested on polish version of Windows 10 (and that is the default settings currently set up).
+- Depending on you system or system language, you might need to change global variable _FOLDER_SEPARATOR_ from its default value (**"\\"**) to the more common one (**"/"**).
+  It was tested on polish version of Windows 10 (and that is the default settings currently set up).
+
+- Default behavior is set to handle comics that are ridden from right to left. You can change this behavior by changing global variable _READING_LEFT_TO_RIGHT_ from its default value (**False**) to **True**
